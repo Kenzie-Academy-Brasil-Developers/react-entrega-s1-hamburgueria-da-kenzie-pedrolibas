@@ -6,6 +6,7 @@ export const ContainerHeader = styled.header `
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-content: space-between;
     background-color: var(--color-grey-0);
     img{
         width: 9.875rem;
@@ -15,8 +16,10 @@ export const ContainerHeader = styled.header `
         cursor: pointer;
     }
 
-    form{
-        width: 22.813rem;
+    div{
+        display: flex;
+        align-items: center;
+        width: 23.813rem;
         max-width: 100%;
         height: 3.75rem;
         margin-right: 1rem;
@@ -57,7 +60,7 @@ export const ContainerHeader = styled.header `
         height: 8.688rem;
         justify-content: space-around;
         align-items: center;
-        form{
+        div{
             width: 17rem;
             display: flex;
             align-items: center;

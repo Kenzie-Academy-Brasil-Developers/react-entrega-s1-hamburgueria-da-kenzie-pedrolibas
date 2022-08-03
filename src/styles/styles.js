@@ -6,6 +6,7 @@ export const Main = styled.main`
 
   @media (max-width: 768px){
     flex-direction: column;
+    align-items: center;
   }
 `;
 

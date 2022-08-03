@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 import Cart from "./components/Cart";
 import Header from "./components/header";
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster/>
       <Global />
       <Header filteredProducts={filteredProducts} setProducts={setProducts} />
       <Main>

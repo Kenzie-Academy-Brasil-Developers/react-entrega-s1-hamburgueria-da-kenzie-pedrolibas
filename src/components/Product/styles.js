@@ -60,7 +60,7 @@ export const Card = styled.li `
     border-radius: 0.5rem;
     transition: 444ms;
     cursor: pointer;
-
+    
     &:hover {
       background-color: var(--color-primary-50);
     }

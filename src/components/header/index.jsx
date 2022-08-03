@@ -1,21 +1,18 @@
 import { ContainerHeader } from "./styles";
 import Logo from "../../assets/Mask Group.svg";
-import { useState } from "react";
 
 const Header = ({ filteredProducts, setProducts }) => {
-  const [productFilter, setProductFilter] = useState("");
 
-  function filter() {
-    productFilter === ""
+  function filter(value) {
+    value === ""
       ? setProducts(filteredProducts)
       : setProducts(
           filteredProducts.filter(
             (elem) =>
-              elem.name.toLowerCase() === productFilter.toLowerCase() ||
-              elem.category.toLowerCase() === productFilter.toLowerCase()
+              elem.name.toLowerCase().includes(value.toLowerCase())||
+              elem.category.toLowerCase().includes(value.toLowerCase())
           )
         );
-    setProductFilter("");
   }
   return (
     <ContainerHeader>
@@ -24,18 +21,16 @@ const Header = ({ filteredProducts, setProducts }) => {
         alt=""
         onClick={() => {
           setProducts(filteredProducts);
-          setProductFilter("");
         }}
       />
-      <form onSubmit={(e) => filter(e.preventDefault())}>
+      <div>
         <input
           type="text"
           placeholder="Digitar Pesquisa"
-          onChange={(e) => setProductFilter(e.target.value)}
-          value={productFilter}
+          onChange={(e) => filter(e.target.value)}
         />
-        <button type="submit">Pesquisar</button>
-      </form>
+        <button>Pesquisar</button>
+      </div>
     </ContainerHeader>
   );
 };
